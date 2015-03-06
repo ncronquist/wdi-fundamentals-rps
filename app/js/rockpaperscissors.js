@@ -80,6 +80,38 @@ function playToFive() {
     var computerWins = 0;
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
     /* YOUR CODE HERE */
+    while (playerWins < 5 && computerWins < 5) {
+        var playerMove = getPlayerMove();
+        var computerMove = getComputerMove();
+        var winner = getWinner(playerMove, computerMove);
+        var sign = "";
+
+        if (winner == 'player') {
+            sign = ">";
+            playerWins+=1;
+        } else if (winner == 'computer') {
+            sign = "<";
+            computerWins+=1;
+        } else {
+            sign = "=";
+        }
+
+        console.log("Player:   " + playerMove.toLowerCase() + "   " + sign +
+                    "   " + computerMove + "   :Computer");
+
+        if (winner == 'tie') {
+            console.log("Tie. No one wins. The score is currently " +
+                        playerWins + " to " + computerWins + ".\n");
+        } else {
+            console.log(winner.capitalize() + " wins. The score is currently "
+                        + playerWins + " to " + computerWins + ".\n");
+        }
+    }
+
     return [playerWins, computerWins];
 }
 
+// This function will convert a string to title case
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
