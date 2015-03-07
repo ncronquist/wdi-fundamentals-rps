@@ -44,7 +44,7 @@ function getWinner(playerMove,computerMove) {
     if (playerMove == computerMove) {
         winner = 'tie';
     } else {
-        switch (playerMove.toLowerCase()) {
+        switch (playerMove) {
             case 'rock':
               if (computerMove == 'paper') {
                 winner = 'computer';
@@ -95,7 +95,7 @@ function playToFive() {
             sign = "=";
         }
 
-        console.log("Player:   " + playerMove.toLowerCase() + "   " + sign +
+        console.log("Player:   " + playerMove + "   " + sign +
                     "   " + computerMove + "   :Computer");
 
         if (winner == 'tie') {
