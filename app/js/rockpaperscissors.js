@@ -67,8 +67,7 @@ function getWinner(playerMove,computerMove) {
                 }
                 break;
             default:
-              playerMove = null;
-            alert("incorrect value for playerMove");
+              winner = '';
         }
     }
     return winner;
